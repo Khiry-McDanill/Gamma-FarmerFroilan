@@ -1,7 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
 
- public interface Readable {
+ public interface Rideable {
     void mount();
     void dismount();
  }

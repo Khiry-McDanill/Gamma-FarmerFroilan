@@ -2,7 +2,7 @@ package com.zipcodewilmington.froilansfarm;
 
 import java.util.ArrayList;
 
-public class CropRow<T extends Crop> implements Plantable {
+public class CropRow<T extends Crop<?>> {
     protected ArrayList<T> crops;
 
     public CropRow() {

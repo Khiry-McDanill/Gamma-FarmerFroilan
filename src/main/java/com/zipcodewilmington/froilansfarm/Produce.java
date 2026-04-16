@@ -10,6 +10,10 @@ public abstract class Produce<T extends Edible> {
         return hasBeenFertilized;
     }
 
+    public boolean isFertilized() {
+        return hasBeenFertilized;
+    }
+
     public void setHasBeenFertilized(boolean hasBeenFertilized) {
         this.hasBeenFertilized = hasBeenFertilized;
     }

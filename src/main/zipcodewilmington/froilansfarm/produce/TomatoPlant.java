@@ -1,13 +1,13 @@
 package com.zipcodewilmington.froilansfarm.produce;
 
-import com.zipcodewilmington.froilansfarm.edible.Kale;
+import com.zipcodewilmington.froilansfarm.Tomato;
 
-public class KalePlant extends Crop<Kale> {
+public class TomatoPlant extends Crop<Tomato> {
 
     @Override
-    public Kale yield() {
+    public Tomato yield() {
         if (hasBeenFertilized && hasBeenHarvested) {
-            return new Kale();
+            return new Tomato();
         }
         return null;
     }

@@ -1,6 +1,4 @@
-package com.zipcodewilmington.froilansfarm.produce;
-
-import com.zipcodewilmington.froilansfarm.edible.Kale;
+package com.zipcodewilmington.froilansfarm;
 
 public class KaleRoot extends Crop<Kale> {
 

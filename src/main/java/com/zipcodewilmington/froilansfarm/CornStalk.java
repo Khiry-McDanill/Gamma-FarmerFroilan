@@ -1,6 +1,4 @@
-package com.zipcodewilmington.froilansfarm.produce;
-
-import com.zipcodewilmington.froilansfarm.edible.EarCorn;
+package com.zipcodewilmington.froilansfarm;
 
 public class CornStalk extends Crop<EarCorn> {
 

@@ -1,6 +1,4 @@
-package com.zipcodewilmington.froilansfarm.produce;
-
-import com.zipcodewilmington.froilansfarm.interfaces.Edible;
+package com.zipcodewilmington.froilansfarm;
 
 public abstract class Crop<T extends Edible> extends Produce<T> {
 

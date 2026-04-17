@@ -1,6 +1,5 @@
 package com.zipcodewilmington.froilansfarm;
 
-import java.beans.Transient;
 import org.junit.Test;
 public class AircraftTest {
 
@@ -8,13 +7,17 @@ public class AircraftTest {
         public void flies() {
             System.out.println("Aircraft flies");
         }
+        public void fertilizes() {
+            System.out.println("Aircraft is fertilizing!");
+        }
         public void fertilizesCropRow() {
             System.out.println("Aircraft is fertilizing the crop row!");
 
         }
     }
 
-    @Transientpublic void testFlies() {
+    @Test
+    public void testFlies() {
         TestAircraft ta = new TestAircraft();
         ta.flies();
     }

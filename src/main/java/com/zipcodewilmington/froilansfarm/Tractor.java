@@ -12,8 +12,8 @@ public class Tractor extends Vehicle implements FarmVehicle {
     }
 
     @Override
-    public void makeNoise() {
-        System.out.println("Tractor goes VROOM.");
+    public String makeNoise() {
+        return "Tractor goes VROOM.";
     }
 
     @Override

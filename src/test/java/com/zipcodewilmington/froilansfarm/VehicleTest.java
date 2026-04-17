@@ -1,46 +1,31 @@
 package com.zipcodewilmington.froilansfarm;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
-import java.beans.Transient;
-public class VehicleTest {
 
-    // A simple fake class just for testing
-    class TestVehicle extends Vehicle {
-        public void makeNoise() {
-            System.out.println("Vehicle is making noise!");
-        }
-        public boolean isRideable() {
-            return true;
-        }
-        public void mount() {
-            System.out.println("Mounted the vehicle!");
-        }
-        public void dismount() {
-            System.out.println("Dismounted the vehicle!");
-        }
-    }
+public class VehicleTest {
 
     @Test
     public void testMakeNoise() {
-        TestVehicle tv = new TestVehicle();
-        tv.makeNoise();
+        Tractor tractor = new Tractor();
+        assertEquals("Tractor goes VROOM.", tractor.makeNoise());
     }
 
     @Test
     public void testIsRideable() {
-        TestVehicle tv = new TestVehicle();
-        assertTrue(tv.isRideable());
+        Tractor tractor = new Tractor();
+        assertTrue(tractor.isRideable());
     }
 
     @Test
     public void testMount() {
-        TestVehicle tv = new TestVehicle();
-        tv.mount();
+        Tractor tractor = new Tractor();
+        tractor.mount();
     }
 
     @Test
     public void testDismount() {
-        TestVehicle tv = new TestVehicle();
-        tv.dismount();
+        Tractor tractor = new Tractor();
+        tractor.dismount();
     }
-} 
+}

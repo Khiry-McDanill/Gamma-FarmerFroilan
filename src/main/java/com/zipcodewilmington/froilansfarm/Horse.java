@@ -1,15 +1,10 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Horse {
-    private String name;
+public class Horse extends Animal implements Rideable {
     private boolean mounted;
 
     public Horse(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
+        super(name);
     }
 
     public boolean isMounted() {
@@ -20,16 +15,17 @@ public class Horse {
         this.mounted = mounted;
     }
 
-    private boolean hasBeenFed;
-
-    public boolean hasBeenFed() {
-        return hasBeenFed;
+    @Override
+    public void mount() {
+        setMounted(true);
     }
 
-    public void eat(Edible food) {
-        hasBeenFed = true;
+    @Override
+    public void dismount() {
+        setMounted(false);
     }
 
+    @Override
     public String makeNoise() {
         return "Neeeeighhhhh";
     }

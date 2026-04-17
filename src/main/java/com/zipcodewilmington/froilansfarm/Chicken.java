@@ -1,17 +1,26 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Chicken {
-    private String name;
+public class Chicken extends Animal {
+    private boolean hasBeenFertilized;
 
     public Chicken(String name) {
-        this.name = name;
+        super(name);
     }
 
-    public String getName() {
-        return name;
-    }
-
+    @Override
     public String makeNoise() {
         return "Cluck cluck";
+    }
+
+    public boolean isHasBeenFertilized() {
+        return hasBeenFertilized;
+    }
+
+    public void setHasBeenFertilized(boolean hasBeenFertilized) {
+        this.hasBeenFertilized = hasBeenFertilized;
+    }
+
+    public Egg yield() {
+        return new Egg(hasBeenFertilized);
     }
 }

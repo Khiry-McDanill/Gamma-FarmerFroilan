@@ -1,11 +1,10 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Farmer implements NoiseMaker {
+public class Botanist implements NoiseMaker {
     private String name;
     private boolean hasBeenFed;
-    private boolean isRiding;
 
-    public Farmer(String name) {
+    public Botanist(String name) {
         this.name = name;
     }
 
@@ -13,13 +12,9 @@ public class Farmer implements NoiseMaker {
         return name;
     }
 
-    public String makesNoise() {
-        return name + " says yo";
-    }
-
     @Override
     public String makeNoise() {
-        return "YeeHaw";
+        return "I know plants!";
     }
 
     public void eat(Edible food) {
@@ -30,22 +25,13 @@ public class Farmer implements NoiseMaker {
         return hasBeenFed;
     }
 
-    public void mount(Horse horse) {
-        horse.setMounted(true);
-        isRiding = true;
-    }
-
-    public void dismount(Horse horse) {
-        horse.setMounted(false);
-        isRiding = false;
-    }
-
-    public boolean isRiding() {
-        return isRiding;
-    }
-
     @SuppressWarnings({"rawtypes", "unchecked"})
     public void plant(Crop<?> crop, CropRow cropRow) {
         cropRow.plant(crop);
+    }
+
+    @SuppressWarnings("rawtypes")
+    public void fertilize(CropRow cropRow) {
+        cropRow.fertilizeCrops();
     }
 }

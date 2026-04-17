@@ -30,8 +30,7 @@ public class Farmer extends Person {
         return isRiding;
     }
 
-    @SuppressWarnings({"rawtypes", "unchecked"})
-    public void plant(Crop<?> crop, CropRow cropRow) {
+    public <T extends Crop<?>> void plant(T crop, CropRow<T> cropRow) {
         cropRow.plant(crop);
     }
 }

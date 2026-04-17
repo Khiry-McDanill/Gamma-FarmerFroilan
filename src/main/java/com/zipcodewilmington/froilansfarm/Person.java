@@ -16,6 +16,12 @@ public abstract class Person implements NoiseMaker {
         hasBeenFed = true;
     }
 
+    public void feed(Horse horse) {
+        horse.feed(new EarCorn());
+        horse.feed(new EarCorn());
+        horse.feed(new EarCorn());
+    }
+
     public boolean hasBeenFed() {
         return hasBeenFed;
     }

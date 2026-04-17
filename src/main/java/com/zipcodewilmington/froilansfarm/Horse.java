@@ -2,6 +2,14 @@ package com.zipcodewilmington.froilansfarm;
 
 public class Horse extends Animal implements Rideable {
     private boolean mounted;
+    private int cornEaten;
+
+    public void feed(EarCorn corn) {
+        cornEaten++;
+        if (cornEaten >= 3) {
+            hasBeenFed = true;
+        }
+    }
 
     public Horse(String name) {
         super(name);

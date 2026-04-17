@@ -1,8 +1,5 @@
 package com.zipcodewilmington.froilansfarm;
-import java.beans.Transient;
-
-import jdk.jfr.Timestamp;
- import org.junit.Test;
+import org.junit.Test;
 
 public class FarmVehicleTest {
 
@@ -18,6 +15,4 @@ public class FarmVehicleTest {
         TestFarmVehicle tfv = new TestFarmVehicle();
         tfv.operatesOnFarm();
     }
-    
-
 }

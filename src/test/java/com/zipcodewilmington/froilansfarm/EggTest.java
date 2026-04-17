@@ -1,9 +1,10 @@
 package com.zipcodewilmington.froilansfarm;
 
-import org.junit.Test;
-import org.junit.Assert;
 
-public class EggTest {
+import org.junit.Assert;
+import org.junit.Test;
+
+public class EggTest implements Edible {
 
     @Test
     public void testEggIsNotNull() {

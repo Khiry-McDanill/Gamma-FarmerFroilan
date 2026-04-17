@@ -1,5 +1,4 @@
 package com.zipcodewilmington.froilansfarm;
-package rocks.zipcode.farm;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -33,7 +32,7 @@ public class PersonTest {
     //ridehorsetest
     public void testFarmerRidesHorse() {
         Farmer froilan = new Farmer("Froilan");
-        Horse horse = new Horse("peony");
+        Horse horse = new Horse("pony");
 
         froilan.mount(horse);
         assertTrue(horse.isMounted());

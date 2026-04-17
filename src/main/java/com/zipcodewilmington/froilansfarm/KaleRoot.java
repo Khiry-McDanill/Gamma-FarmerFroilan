@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class KalePlant extends Crop<Kale> {
+public class KaleRoot extends Crop<Kale> {
 
     @Override
     public Kale yield() {

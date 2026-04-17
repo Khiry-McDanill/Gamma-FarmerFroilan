@@ -1,7 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
-import org.junit.Test;
 import org.junit.Assert;
+import org.junit.Test;
 
 public class CornStalkTest {
 

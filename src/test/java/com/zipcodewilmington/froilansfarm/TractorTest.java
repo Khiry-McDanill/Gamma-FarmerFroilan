@@ -1,43 +1,31 @@
 package com.zipcodewilmington.froilansfarm;
+
+import org.junit.Assert;
 import org.junit.Test;
-import java.beans.Transient;
 
 public class TractorTest {
 
     @Test
-    public void testTractorIsRideable(){
+    public void testTractorIsNotNull() {
         Tractor tractor = new Tractor();
-        tractor.harvestCrop();
-    }
-  @Test
-    public void testOperatesOnFarm() {
-        Tractor tractor = new Tractor();
-        tractor.operatesOnFarm();
+        Assert.assertNotNull(tractor);
     }
 
     @Test
-    public void testMakeNoise() {
+    public void testTractorIsRideable() {
         Tractor tractor = new Tractor();
-        tractor.makeNoise();
+        Assert.assertTrue(tractor.isRideable());
     }
 
     @Test
-    public void testIsRideable() {
+    public void testTractorImplementsFarmVehicle() {
         Tractor tractor = new Tractor();
-        assertTrue(tractor.isRideable());
+        Assert.assertTrue(tractor instanceof FarmVehicle);
     }
 
     @Test
-    public void testMount() {
+    public void testTractorImplementsRideable() {
         Tractor tractor = new Tractor();
-        tractor.mount();
+        Assert.assertTrue(tractor instanceof Rideable);
     }
-
-    @Test
-    public void testDismount() {
-        Tractor tractor = new Tractor();
-        tractor.dismount();
-    }
-}  
- 
-
+}

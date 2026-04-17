@@ -1,11 +1,10 @@
 package com.zipcodewilmington.froilansfarm;
-package rocks.zipcode.farm;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 
 
-public class FarmerTest {
+public class PersonTest {
     //makes noise
     //eats
     //this doesnt extens from animal, they just share interfaces.
@@ -33,7 +32,7 @@ public class FarmerTest {
     //ridehorsetest
     public void testFarmerRidesHorse() {
         Farmer froilan = new Farmer("Froilan");
-        Horse horse = new Horse("peony");
+        Horse horse = new Horse("pony");
 
         froilan.mount(horse);
         assertTrue(horse.isMounted());

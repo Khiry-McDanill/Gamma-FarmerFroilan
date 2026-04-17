@@ -1,7 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
+import java.beans.Transient;
 public class VehicleTest {
 
     // A simple fake class just for testing

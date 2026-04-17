@@ -30,4 +30,8 @@ public class CropRow<T extends Crop<?>> {
     public ArrayList<T> getCrops() {
         return crops;
     }
+
+    public int size() {
+        return crops.size();
+    }
 }

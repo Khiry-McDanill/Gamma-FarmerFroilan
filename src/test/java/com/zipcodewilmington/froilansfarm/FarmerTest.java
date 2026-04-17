@@ -1,28 +1,28 @@
 package com.zipcodewilmington.froilansfarm;
 
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 public class FarmerTest {
     @Test
     public void testFarmerName() {
         Farmer froilan = new Farmer("Froilan");
-        assertsEquals("Froilan", froilan.getName());
+        assertEquals("Froilan", froilan.getName());
     }
 
     @Test
     public void testFarmerMakesNoise() {
         Farmer froilan = new Farmer("Froilan");
-        assertsEquals("Froilan says yo", froilan.makesNoise());
+        assertEquals("Froilan says yo", froilan.makesNoise());
     }
 
     @Test
     public void testFarmerCanEat() {
         Farmer froilan = new Farmer("Froilan");
-        froilan.eat( new EarCorn);
-        assertTrue(froilan.hasBeedFed());
+        froilan.eat(new EarCorn());
+        assertTrue(froilan.hasBeenFed());
     }
 
     @Test

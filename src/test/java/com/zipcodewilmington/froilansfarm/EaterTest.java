@@ -1,0 +1,37 @@
+package com.zipcodewilmington.froilansfarm;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class EaterTest {
+
+    static class TestFood implements Edible {
+        @Override
+        public String eat() {
+            return "Eating test food";
+        }
+
+        @Override
+        public boolean getIsEdible() {
+            return true;
+        }
+    }
+
+    static class TestEater implements Eater {
+        boolean hasEaten = false;
+
+        @Override
+        public void eat(Edible food) {
+            this.hasEaten = true;
+        }
+    }
+
+    @Test
+    public void testEat() {
+        TestEater eater = new TestEater();
+        Edible food = new TestFood();
+
+        eater.eat(food);
+        assertTrue(eater.hasEaten);
+    }
+}

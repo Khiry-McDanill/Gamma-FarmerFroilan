@@ -1,32 +1,19 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Farmer {
-    private String name;
-    private boolean hasBeenFed;
+public class Farmer extends Person {
     private boolean isRiding;
 
     public Farmer(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
+        super(name);
     }
 
     public String makesNoise() {
         return name + " says yo";
     }
 
+    @Override
     public String makeNoise() {
         return "YeeHaw";
-    }
-
-    public void eat(Edible food) {
-        hasBeenFed = true;
-    }
-
-    public boolean hasBeenFed() {
-        return hasBeenFed;
     }
 
     public void mount(Horse horse) {
@@ -43,6 +30,7 @@ public class Farmer {
         return isRiding;
     }
 
+    @SuppressWarnings({"rawtypes", "unchecked"})
     public void plant(Crop<?> crop, CropRow cropRow) {
         cropRow.plant(crop);
     }

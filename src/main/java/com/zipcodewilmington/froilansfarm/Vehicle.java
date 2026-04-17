@@ -2,7 +2,7 @@ package com.zipcodewilmington.froilansfarm;
 
 
 
-public abstract class Vehicle implements Rideable {
-    public abstract void makeNoise();
+public abstract class Vehicle implements Rideable, NoiseMaker {
+    public abstract String makeNoise();
     public abstract boolean isRideable();
 }

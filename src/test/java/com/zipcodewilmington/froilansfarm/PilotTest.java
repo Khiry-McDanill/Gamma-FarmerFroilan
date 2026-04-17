@@ -1,4 +1,8 @@
 package com.zipcodewilmington.froilansfarm;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7c5517a9de158dfcc36bbde41953b368ab6d532e
 import org.junit.Test;
 
 public class PilotTest {

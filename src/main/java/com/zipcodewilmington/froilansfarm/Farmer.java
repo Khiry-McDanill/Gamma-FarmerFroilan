@@ -17,6 +17,7 @@ public class Farmer implements NoiseMaker {
         return name + " says yo";
     }
 
+    @Override
     public String makeNoise() {
         return "YeeHaw";
     }

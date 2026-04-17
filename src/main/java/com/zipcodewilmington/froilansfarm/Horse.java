@@ -40,6 +40,7 @@ public class Horse implements NoiseMaker, Rideable {
         setMounted(false);
     }
 
+    @Override
     public String makeNoise() {
         return "Neeeeighhhhh";
     }

@@ -11,6 +11,7 @@ public class Chicken implements NoiseMaker {
         return name;
     }
 
+    @Override
     public String makeNoise() {
         return "Cluck cluck";
     }

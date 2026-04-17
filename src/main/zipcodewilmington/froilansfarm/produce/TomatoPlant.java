@@ -1,0 +1,14 @@
+package com.zipcodewilmington.froilansfarm.produce;
+
+import com.zipcodewilmington.froilansfarm.Tomato;
+
+public class TomatoPlant extends Crop<Tomato> {
+
+    @Override
+    public Tomato yield() {
+        if (hasBeenFertilized && hasBeenHarvested) {
+            return new Tomato();
+        }
+        return null;
+    }
+}

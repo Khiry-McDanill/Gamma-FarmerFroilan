@@ -1,6 +1,6 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.produce;
 
-import com.zipcodewilmington.froilansfarm.edible.Tomato;
+import com.zipcodewilmington.froilansfarm.Tomato;
 
 public class TomatoPlant extends Crop<Tomato> {
 

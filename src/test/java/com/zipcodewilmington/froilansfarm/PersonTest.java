@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 
 
 
-public class FarmerTest {
+public class PersonTest {
     //makes noise
     //eats
     //this doesnt extens from animal, they just share interfaces.

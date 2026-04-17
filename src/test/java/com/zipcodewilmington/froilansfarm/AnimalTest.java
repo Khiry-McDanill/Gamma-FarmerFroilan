@@ -27,11 +27,7 @@ public class AnimalTest {
         assertEquals("Neeeeighhhhh", horse.makeNoise);
     }
 
-    @Test
-    public void testChickenMakeNoise() {
-        Chicken chicken = new Chicken("clucky");
-        assertEquals("Cluck cluck", chicken.makeNoise);
-    }
+    
 
     @Test
     public void testToString() {

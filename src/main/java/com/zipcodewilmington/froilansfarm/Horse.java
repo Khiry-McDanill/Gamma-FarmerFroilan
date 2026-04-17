@@ -1,15 +1,10 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Horse implements NoiseMaker, Rideable {
-    private String name;
+public class Horse extends Animal implements Rideable {
     private boolean mounted;
 
     public Horse(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
+        super(name);
     }
 
     public boolean isMounted() {
@@ -18,16 +13,6 @@ public class Horse implements NoiseMaker, Rideable {
 
     public void setMounted(boolean mounted) {
         this.mounted = mounted;
-    }
-
-    private boolean hasBeenFed;
-
-    public boolean hasBeenFed() {
-        return hasBeenFed;
-    }
-
-    public void eat(Edible food) {
-        hasBeenFed = true;
     }
 
     @Override

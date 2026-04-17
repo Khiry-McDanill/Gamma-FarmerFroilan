@@ -1,18 +1,26 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Chicken implements NoiseMaker {
-    private String name;
+public class Chicken extends Animal {
+    private boolean hasBeenFertilized;
 
     public Chicken(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
+        super(name);
     }
 
     @Override
     public String makeNoise() {
         return "Cluck cluck";
+    }
+
+    public boolean isHasBeenFertilized() {
+        return hasBeenFertilized;
+    }
+
+    public void setHasBeenFertilized(boolean hasBeenFertilized) {
+        this.hasBeenFertilized = hasBeenFertilized;
+    }
+
+    public Egg yield() {
+        return new Egg(hasBeenFertilized);
     }
 }

@@ -1,8 +1,6 @@
-package com.zipcodewilmington.froilansfarm.produce;
+package com.zipcodewilmington.froilansfarm;
 
-import com.zipcodewilmington.Kale;
-
-public class KalePlant extends Crop<Kale> {
+public class KaleRoot extends Crop<Kale> {
 
     @Override
     public Kale yield() {

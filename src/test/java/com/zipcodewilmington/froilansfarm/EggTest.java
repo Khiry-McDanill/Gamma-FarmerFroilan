@@ -1,11 +1,10 @@
 package com.zipcodewilmington.froilansfarm;
 
-import com.zipcodewilmington.froilansfarm.edible.Egg;
-import com.zipcodewilmington.froilansfarm.interfaces.Edible;
-import org.junit.Test;
-import org.junit.Assert;
 
-public class EggTest {
+import org.junit.Assert;
+import org.junit.Test;
+
+public class EggTest implements Edible {
 
     @Test
     public void testEggIsNotNull() {

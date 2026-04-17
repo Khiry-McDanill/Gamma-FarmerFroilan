@@ -37,4 +37,13 @@ public class Froilanda extends Person implements Pilot {
     public String makeNoise() {
         return "Froilanda says: Ready to fly!";
     }
+    @Override
+    public void eatBreakfast() {
+        eat(new EarCorn());
+        eat(new EarCorn());
+        eat(new Tomato());
+        eat(new EdibleEgg());
+        eat(new EdibleEgg());
+    }
 }
+//method for froilanda that shows her food

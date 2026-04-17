@@ -1,20 +1,24 @@
 package com.zipcodewilmington.froilansfarm;
 
-import java.beans.Transient;
+
 import org.junit.Test;
 public class AircraftTest {
 
     class TestAircraft implements Aircraft {
+
+    @Test
         public void flies() {
             System.out.println("Aircraft flies");
         }
+    @Test
         public void fertilizesCropRow() {
-            System.out.println("Aircraft is fertilizing the crop row!");
+        System.out.println("Aircraft is fertilizing the crop row!");
 
         }
     }
 
-    @Transientpublic void testFlies() {
+    @Test
+    public void testFlies() {
         TestAircraft ta = new TestAircraft();
         ta.flies();
     }

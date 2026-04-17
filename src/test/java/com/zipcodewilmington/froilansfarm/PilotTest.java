@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
-import java.beans.Transient;
+import org.junit.Test;
 
 public class PilotTest {
 class TestPilot implements Pilot {

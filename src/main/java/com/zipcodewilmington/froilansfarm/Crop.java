@@ -1,6 +1,5 @@
 package com.zipcodewilmington.froilansfarm;
 
-
 public abstract class Crop<T extends Edible> extends Produce<T> {
 
     protected boolean hasBeenHarvested;

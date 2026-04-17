@@ -1,9 +1,10 @@
 package com.zipcodewilmington.froilansfarm;
 
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class FarmerTest {
     @Test
@@ -67,7 +68,7 @@ public class FarmerTest {
     @Test
     public void testFarmerCanPlant() {
         Farmer froilan = new Farmer("Froilan");
-        CropRow cropRow = new CropRow();
+        CropRow<CornStalk> cropRow = new CropRow<>();
         
         froilan.plant(new CornStalk(), cropRow);
         froilan.plant(new CornStalk(), cropRow);

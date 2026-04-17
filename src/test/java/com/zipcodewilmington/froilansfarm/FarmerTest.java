@@ -67,7 +67,7 @@ public class FarmerTest {
     @Test
     public void testFarmerCanPlant() {
         Farmer froilan = new Farmer("Froilan");
-        CropRow cropRow = new CropRow();
+        CropRow<CornStalk> cropRow = new CropRow<>();
         
         froilan.plant(new CornStalk(), cropRow);
         froilan.plant(new CornStalk(), cropRow);

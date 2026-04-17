@@ -1,16 +1,10 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Farmer implements NoiseMaker {
-    private String name;
-    private boolean hasBeenFed;
+public class Farmer extends Person {
     private boolean isRiding;
 
     public Farmer(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
+        super(name);
     }
 
     public String makesNoise() {
@@ -20,14 +14,6 @@ public class Farmer implements NoiseMaker {
     @Override
     public String makeNoise() {
         return "YeeHaw";
-    }
-
-    public void eat(Edible food) {
-        hasBeenFed = true;
-    }
-
-    public boolean hasBeenFed() {
-        return hasBeenFed;
     }
 
     public void mount(Horse horse) {

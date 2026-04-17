@@ -1,69 +1,68 @@
 package com.zipcodewilmington.froilansfarm;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
 public class FarmHouseTest {
-@Test
+
+    @Test
     public void testConstructorName() {
-
-    FarmHouse farmHouse = new FarmHouse();
-    String name = farmHouse.getName();
-    Assertions.assertEquals("Farm House" , name);
-}
-
-@Test
-    public void testAddPerson() {
         FarmHouse farmHouse = new FarmHouse();
-        Person person = new Farmer(null);
-
-        boolean added = farmHouse.add(person);
-        Assertions.assertTrue(added);
-        Assertions.assertEquals(1, farmHouse.size());
+        String name = farmHouse.getName();
+        assertEquals("Farm House", name);
     }
 
-@Test
-    public void testRemovePerson() {
-        Farmhouse farmhouse = new Farmhouse();
-        Person p = new Farmer(null);
+    @Test
+    public void testAddPerson() {
+        FarmHouse farmHouse = new FarmHouse();
+        Person person = new Farmer("Test");
+
+        boolean added = farmHouse.add(person);
+        assertTrue(added);
+        assertEquals(1, farmHouse.size());
+    }
+
+    @Test
+    public void testGetPerson() {
+        FarmHouse farmHouse = new FarmHouse();
+        Person p = new Farmer("Test");
         farmHouse.add(p);
 
-        Person result = farmhouse.get(0);
-        Assertions.assertEquals(p, result);
+        Person result = farmHouse.get(0);
+        assertEquals(p, result);
     }
 
     @Test
     public void testIsEmptyInitially() {
-       Farmhouse farmhouse = new Farmhouse(); 
-       Assertions.assertEquals(farmHouse.isEmpty);
+        FarmHouse farmHouse = new FarmHouse();
+        assertTrue(farmHouse.isEmpty());
     }
 
-@Test
-
+    @Test
     public void testClearFarmHouse() {
-       Farmhouse farmhouse = new Farmhouse();
-       farmHouse.add(new Farmer(null)); 
-       farmHouse.add(new Farmer(null)); 
+        FarmHouse farmHouse = new FarmHouse();
+        farmHouse.add(new Farmer("Test1"));
+        farmHouse.add(new Farmer("Test2"));
 
-       farmHouse.clear();
+        farmHouse.clear();
 
-       Assertions.assertTrue(farmHouse.isEmpty());
-       Assertions.assertEquals(0,farmHouse.size());
+        assertTrue(farmHouse.isEmpty());
+        assertEquals(0, farmHouse.size());
     }
 
-@Test
-
-    public void testcapacityLimit() {
-        Farmhouse farmhouse = new Farmhouse();
-        farmhouse.setcapacity(1);
-        Person p1 = new Farmer(null);
-        Person p2 = new Farmer(null);
+    @Test
+    public void testCapacityLimit() {
+        FarmHouse farmHouse = new FarmHouse();
+        farmHouse.setCapacity(1);
+        Person p1 = new Farmer("Test1");
+        Person p2 = new Farmer("Test2");
 
         boolean firstAdded = farmHouse.add(p1);
-        boolean firstAdded = farmHouse.add(p2);
+        boolean secondAdded = farmHouse.add(p2);
 
-        Assertions.assertTrue(firstAdded);
-        Assertions.asserFalse(secondAdded);
-        Assertions.assertEquals(1, farmHouse.size());
-        Assertions.asserTrue(farmHouse.isFull());
+        assertTrue(firstAdded);
+        assertFalse(secondAdded);
+        assertEquals(1, farmHouse.size());
+        assertTrue(farmHouse.isFull());
     }
-}   
+}

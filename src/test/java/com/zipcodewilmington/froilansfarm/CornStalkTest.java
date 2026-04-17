@@ -1,6 +1,5 @@
 package com.zipcodewilmington.froilansfarm;
 
-import com.zipcodewilmington.froilansfarm.edible.EarCorn;
 import org.junit.Test;
 import org.junit.Assert;
 

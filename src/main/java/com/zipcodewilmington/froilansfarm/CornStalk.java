@@ -1,7 +1,5 @@
 package com.zipcodewilmington.froilansfarm;
 
-import com.zipcodewilmington.froilansfarm.edible.EarCorn;
-
 public class CornStalk extends Crop<EarCorn> {
 
     @Override

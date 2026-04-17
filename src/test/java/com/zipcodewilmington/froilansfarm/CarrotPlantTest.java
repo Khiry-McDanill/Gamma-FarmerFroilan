@@ -1,6 +1,5 @@
 package com.zipcodewilmington.froilansfarm;
 
-import com.zipcodewilmington.froilansfarm.edible.Carrot;
 import org.junit.Test;
 import org.junit.Assert;
 
@@ -8,13 +7,13 @@ public class CarrotPlantTest {
 
     @Test
     public void testYieldReturnsNullWhenNotReady() {
-        CarrotPlant carrotPlant = new CarrotPlant();
+        CarrotRoot carrotPlant = new CarrotRoot();
         Assert.assertNull(carrotPlant.yield());
     }
 
     @Test
     public void testYieldReturnsCarrotWhenFertilizedAndHarvested() {
-        CarrotPlant carrotPlant = new CarrotPlant();
+        CarrotRoot carrotPlant = new CarrotRoot();
         carrotPlant.setHasBeenFertilized(true);
         carrotPlant.setHasBeenHarvested(true);
         Assert.assertNotNull(carrotPlant.yield());
@@ -22,7 +21,7 @@ public class CarrotPlantTest {
 
     @Test
     public void testYieldReturnsCarrotType() {
-        CarrotPlant carrotPlant = new CarrotPlant();
+        CarrotRoot carrotPlant = new CarrotRoot();
         carrotPlant.setHasBeenFertilized(true);
         carrotPlant.setHasBeenHarvested(true);
         Assert.assertTrue(carrotPlant.yield() instanceof Carrot);
@@ -30,14 +29,14 @@ public class CarrotPlantTest {
 
     @Test
     public void testYieldNullWhenOnlyFertilized() {
-        CarrotPlant carrotPlant = new CarrotPlant();
+        CarrotRoot carrotPlant = new CarrotRoot();
         carrotPlant.setHasBeenFertilized(true);
         Assert.assertNull(carrotPlant.yield());
     }
 
     @Test
     public void testYieldNullWhenOnlyHarvested() {
-        CarrotPlant carrotPlant = new CarrotPlant();
+        CarrotRoot carrotPlant = new CarrotRoot();
         carrotPlant.setHasBeenHarvested(true);
         Assert.assertNull(carrotPlant.yield());
     }

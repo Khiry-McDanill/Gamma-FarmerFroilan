@@ -1,7 +1,5 @@
 package com.zipcodewilmington.froilansfarm;
 
-import com.zipcodewilmington.froilansfarm.interfaces.Edible;
-
 public abstract class Produce<T extends Edible> {
 
     protected boolean hasBeenFertilized;

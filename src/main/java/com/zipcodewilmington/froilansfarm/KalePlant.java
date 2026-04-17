@@ -1,7 +1,5 @@
 package com.zipcodewilmington.froilansfarm;
 
-import com.zipcodewilmington.froilansfarm.edible.Kale;
-
 public class KalePlant extends Crop<Kale> {
 
     @Override

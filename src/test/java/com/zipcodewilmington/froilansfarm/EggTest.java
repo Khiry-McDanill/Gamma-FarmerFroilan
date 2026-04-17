@@ -1,7 +1,5 @@
 package com.zipcodewilmington.froilansfarm;
 
-import com.zipcodewilmington.froilansfarm.edible.Egg;
-import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import org.junit.Test;
 import org.junit.Assert;
 

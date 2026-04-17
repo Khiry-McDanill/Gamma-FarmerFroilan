@@ -8,4 +8,9 @@ public class Egg implements Edible {
     public Egg(boolean fertilized) {
         this.fertilized = fertilized;
     }
+
+    @Override
+    public String eat() {
+        return "Eating an egg.";
+    }
 }

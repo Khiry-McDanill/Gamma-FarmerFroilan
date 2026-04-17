@@ -1,10 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
-
-
 import org.junit.Test;
-public class AircraftTest {
+public class AircraftTest implements Aircraft {
 
-    class TestAircraft implements Aircraft {
 
     @Test
         public void flies() {
@@ -19,7 +16,7 @@ public class AircraftTest {
 
     @Test
     public void testFlies() {
-        TestAircraft ta = new TestAircraft();
+        Aircraft ta = new TestAircraft();
         ta.flies();
     }
 
@@ -30,6 +27,3 @@ public class AircraftTest {
         TestAircraft ta = new TestAircraft();
         ta.fertilizesCropRow();
     }
-
-
-}

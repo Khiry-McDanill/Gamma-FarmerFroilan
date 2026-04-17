@@ -16,6 +16,6 @@ public class Egg implements Edible {
 
     @Override
     public boolean getIsEdible() {
-        return true;
+        return !fertilized;
     }
 }

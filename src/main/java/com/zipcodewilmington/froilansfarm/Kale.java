@@ -5,4 +5,9 @@ public class Kale implements Edible {
     public String eat() {
         return "Eating kale.";
     }
+
+    @Override
+    public boolean getIsEdible() {
+        return true;
+    }
 }

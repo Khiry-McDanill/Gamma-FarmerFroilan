@@ -5,4 +5,9 @@ public class EarCorn implements Edible {
     public String eat() {
         return "Eating an ear of corn.";
     }
+
+    @Override
+    public boolean getIsEdible() {
+        return true;
+    }
 }

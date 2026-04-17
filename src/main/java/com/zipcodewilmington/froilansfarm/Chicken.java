@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Chicken {
+public class Chicken implements NoiseMaker {
     private String name;
 
     public Chicken(String name) {

@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Farmer {
+public class Farmer implements NoiseMaker {
     private String name;
     private boolean hasBeenFed;
     private boolean isRiding;

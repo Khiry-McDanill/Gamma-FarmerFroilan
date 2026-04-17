@@ -14,7 +14,6 @@ public class EaterTest {
     @Test
     static class TestEater implements Eater {
         boolean hasEaten = false;
-        @Override
         public void eat(Edible edible) {
             this.hasEaten = true;
         }

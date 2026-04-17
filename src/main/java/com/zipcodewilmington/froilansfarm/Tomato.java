@@ -5,4 +5,9 @@ public class Tomato implements Edible {
     public String eat() {
         return "Eating a tomato.";
     }
+
+    @Override
+    public boolean getIsEdible() {
+        return true;
+    }
 }

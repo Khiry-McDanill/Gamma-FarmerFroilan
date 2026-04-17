@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Horse {
+public class Horse implements NoiseMaker, Rideable {
     private String name;
     private boolean mounted;
 
@@ -28,6 +28,16 @@ public class Horse {
 
     public void eat(Edible food) {
         hasBeenFed = true;
+    }
+
+    @Override
+    public void mount() {
+        setMounted(true);
+    }
+
+    @Override
+    public void dismount() {
+        setMounted(false);
     }
 
     public String makeNoise() {

@@ -13,4 +13,9 @@ public class Egg implements Edible {
     public String eat() {
         return "Eating an egg.";
     }
+
+    @Override
+    public boolean getIsEdible() {
+        return true;
+    }
 }

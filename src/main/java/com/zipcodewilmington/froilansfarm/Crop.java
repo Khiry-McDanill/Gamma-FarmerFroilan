@@ -1,6 +1,5 @@
-package com.zipcodewilmington.froilansfarm.produce;
+package com.zipcodewilmington.froilansfarm;
 
-import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 
 public abstract class Crop<T extends Edible> extends Produce<T> {
 
@@ -12,5 +11,9 @@ public abstract class Crop<T extends Edible> extends Produce<T> {
 
     public void setHasBeenHarvested(boolean hasBeenHarvested) {
         this.hasBeenHarvested = hasBeenHarvested;
+    }
+
+    public void flyover() {
+        this.hasBeenFertilized = true;
     }
 }

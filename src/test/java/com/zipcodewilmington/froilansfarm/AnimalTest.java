@@ -1,6 +1,9 @@
 package com.zipcodewilmington.froilansfarm;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import org.junit.Test;
 
 public class AnimalTest {
     @Test
@@ -18,21 +21,25 @@ public class AnimalTest {
     public void testHorseCanEat() {
         Horse horse = new Horse("mimi");
         horse.eat(new EarCorn());
-        assertTrue(horse.hasBeeenFed());
+        assertTrue(horse.hasBeenFed());
     }
 
     @Test
     public void testHorseCanMakeNoise() {
         Horse horse = new Horse("mimi");
-        assertEquals("Neeeeighhhhh", horse.makeNoise);
+        assertEquals("Neeeeighhhhh", horse.makeNoise());
     }
 
-    
+    @Test
+    public void testChickenMakeNoise() {
+        Chicken chicken = new Chicken("clucky");
+        assertEquals("Cluck cluck", chicken.makeNoise());
+    }
 
     @Test
     public void testToString() {
         Horse horse = new Horse("mimi");
-        assertEquals("Horse naed mimi", horse.toString());
+        assertEquals("Horse named mimi", horse.toString());
     }
 
 }

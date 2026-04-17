@@ -2,7 +2,7 @@ package com.zipcodewilmington.froilansfarm;
 
 import java.util.ArrayList;
 
-public class CropRow<T extends Crop> implements Plantable {
+public class CropRow<T extends Crop<?>> {
     protected ArrayList<T> crops;
 
     public CropRow() {
@@ -29,5 +29,9 @@ public class CropRow<T extends Crop> implements Plantable {
 
     public ArrayList<T> getCrops() {
         return crops;
+    }
+
+    public int size() {
+        return crops.size();
     }
 }

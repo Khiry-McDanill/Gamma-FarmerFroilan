@@ -1,6 +1,6 @@
-package com.zipcodewilmington.froilansfarm.produce;
+package com.zipcodewilmington.froilansfarm;
 
-import com.zipcodewilmington.froilansfarm.interfaces.Edible;
+
 
 public abstract class Produce<T extends Edible> {
 
@@ -9,6 +9,10 @@ public abstract class Produce<T extends Edible> {
     public abstract T yield();
 
     public boolean isHasBeenFertilized() {
+        return hasBeenFertilized;
+    }
+
+    public boolean isFertilized() {
         return hasBeenFertilized;
     }
 

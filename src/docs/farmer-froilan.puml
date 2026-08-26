@@ -89,7 +89,7 @@ Animal ..|> NoiseMaker
 Animal ..|> Eater
 
 Horse ..|> Rideable
-Chicken ..|> Egg
+Chicken ..|> Produce
 
 ' =========================================================
 ' EDIBLE TYPES
@@ -100,11 +100,8 @@ class Egg
 class EarCorn
 class Tomato
 
-Produce <|..EarCorn
-Produce <|.. Tomato
-Produce <|.. EdibleEgg
-EdibleEgg <|-- Egg
 Edible <|.. EdibleEgg
+EdibleEgg <|-- Egg
 Edible <|.. EarCorn
 Edible <|.. Tomato
 

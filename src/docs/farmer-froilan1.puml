@@ -1,0 +1,274 @@
+@startuml
+title Ol' McFroilan Had a Farm
+left to right direction
+
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam packageStyle rectangle
+
+' =========================================================
+' CORE ABILITIES
+' =========================================================
+
+package "Core Abilities" {
+
+    interface Edible
+
+    interface Eater {
+        +eat(food: Edible): void
+    }
+
+    interface NoiseMaker {
+        +makeNoise(): void
+    }
+
+    interface Rideable
+
+    interface Rider {
+        +mount(rideable: Rideable): void
+        +dismount(rideable: Rideable): void
+    }
+
+    interface Botanist {
+        +plant(crop: Crop, row: CropRow): void
+    }
+
+    interface Produce {
+        +yield(): Edible
+    }
+
+    interface Aircraft {
+        +fly(): void
+    }
+}
+
+' =========================================================
+' PEOPLE
+' =========================================================
+
+package "People" {
+
+    abstract class Person {
+        +makeNoise(): void
+        +eat(food: Edible): void
+    }
+
+    class Farmer {
+        +mount(rideable: Rideable): void
+        +dismount(rideable: Rideable): void
+        +plant(crop: Crop, row: CropRow): void
+    }
+
+    class Pilot {
+        +fly(aircraft: Aircraft): void
+    }
+
+    Person <|-- Farmer
+    Person <|-- Pilot
+
+    Person ..|> Eater
+    Person ..|> NoiseMaker
+
+    Farmer ..|> Rider
+    Farmer ..|> Botanist
+
+    Pilot ..> Aircraft : flies
+}
+
+' =========================================================
+' ANIMALS
+' =========================================================
+
+package "Animals" {
+
+    abstract class Animal {
+        +makeNoise(): void
+        +eat(food: Edible): void
+    }
+
+    class Horse
+
+    class Chicken {
+        -hasBeenFertilized: boolean
+        +yield(): Edible
+    }
+
+    Animal <|-- Horse
+    Animal <|-- Chicken
+
+    Animal ..|> NoiseMaker
+    Animal ..|> Eater
+
+    Horse ..|> Rideable
+    Chicken ..|> Produce
+}
+
+' =========================================================
+' EDIBLE TYPES
+' =========================================================
+
+package "Edible Types" {
+
+    class EdibleEgg
+    class Egg
+    class EarCorn
+    class Tomato
+
+    Edible <|.. EdibleEgg
+    EdibleEgg <|-- Egg
+    Edible <|.. EarCorn
+    Edible <|.. Tomato
+}
+
+' =========================================================
+' PRODUCE / CROPS
+' =========================================================
+
+package "Produce / Crops" {
+
+    abstract class Crop {
+        -hasBeenFertilized: boolean
+        -hasBeenHarvested: boolean
+
+        +fertilize(): void
+        +harvest(): void
+        +hasBeenFertilized(): boolean
+        +hasBeenHarvested(): boolean
+        +yield(): Edible
+    }
+
+    class CornStalk
+    class TomatoPlant
+
+    Crop ..|> Produce
+
+    Crop <|-- CornStalk
+    Crop <|-- TomatoPlant
+
+    CornStalk ..> EarCorn : yields
+    TomatoPlant ..> Tomato : yields
+}
+
+' =========================================================
+' VEHICLES
+' =========================================================
+
+package "Vehicles" {
+
+    abstract class Vehicle {
+        +makeNoise(): void
+    }
+
+    abstract class FarmVehicle {
+        +operate(farm: Farm): void
+    }
+
+    class Tractor {
+        +harvest(crop: Crop): void
+    }
+
+    class CropDuster {
+        +fly(): void
+        +fertilize(row: CropRow): void
+    }
+
+    Vehicle <|-- FarmVehicle
+    FarmVehicle <|-- Tractor
+
+    Vehicle ..|> NoiseMaker
+    Vehicle ..|> Rideable
+
+    CropDuster --|> FarmVehicle
+    CropDuster ..|> Aircraft
+
+    Tractor ..> Crop : harvests
+    Tractor ..> Farm : operates on
+    CropDuster ..> CropRow : fertilizes
+}
+
+' =========================================================
+' SHELTERS
+' =========================================================
+
+package "Shelters" {
+
+    abstract class Shelter
+
+    class Stable {
+        -horses: List<Horse>
+        +addHorse(horse: Horse): void
+        +getHorses(): List<Horse>
+    }
+
+    class ChickenCoop {
+        -chickens: List<Chicken>
+        +addChicken(chicken: Chicken): void
+        +getChickens(): List<Chicken>
+    }
+
+    class FarmHouse {
+        -people: List<Person>
+        +addPerson(person: Person): void
+        +getPeople(): List<Person>
+    }
+
+    Shelter <|-- Stable
+    Shelter <|-- ChickenCoop
+    Shelter <|-- FarmHouse
+
+    Stable "1" *-- "0..*" Horse
+    ChickenCoop "1" *-- "0..*" Chicken
+    FarmHouse "1" *-- "0..*" Person
+}
+
+' =========================================================
+' FARM STRUCTURE
+' =========================================================
+
+package "Farm Structure" {
+
+    class CropRow {
+        -crops: List<Crop>
+        +addCrop(crop: Crop): void
+        +getCrops(): List<Crop>
+    }
+
+    class Field {
+        -rows: List<CropRow>
+        +addRow(row: CropRow): void
+        +getRows(): List<CropRow>
+    }
+
+    class Farm {
+        -field: Field
+        -stables: List<Stable>
+        -chickenCoops: List<ChickenCoop>
+        -farmHouse: FarmHouse
+
+        +addStable(stable: Stable): void
+        +addChickenCoop(coop: ChickenCoop): void
+        +getField(): Field
+        +getStables(): List<Stable>
+        +getChickenCoops(): List<ChickenCoop>
+        +getFarmHouse(): FarmHouse
+    }
+
+    Field "1" *-- "5" CropRow
+    CropRow "1" *-- "0..*" Crop
+
+    Farm "1" *-- "1" Field
+    Farm "1" *-- "0..*" Stable
+    Farm "1" *-- "0..*" ChickenCoop
+    Farm "1" *-- "1" FarmHouse
+}
+
+' =========================================================
+' BEHAVIOR CONNECTIONS
+' =========================================================
+
+Eater ..> Edible : eats
+Rider ..> Rideable : rides
+Botanist ..> Crop : plants
+Botanist ..> CropRow : plants into
+
+@enduml

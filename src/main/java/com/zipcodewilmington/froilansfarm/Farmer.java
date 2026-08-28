@@ -14,6 +14,7 @@ public class Farmer extends Person implements Rider, Botanist {
 
     @Override
     public void plant(Crop crop, CropRow row) {
+        row.addCrop(crop);
         // TODO: implement
     }
 }
